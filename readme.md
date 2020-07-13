@@ -14,6 +14,8 @@
 ### Usage:
 
 ```shell
+git clone https://github.com/jacques-andre/crypto-yank
+cd crypto-yank
 pip3 install -r requirements.txt 
 python3 setup.py 
 python3 crypto-yank.py
@@ -48,7 +50,7 @@ Once this file is created in the same directory as `crypto-yank.py` you can run 
 
 ### Requirements:
 
-[requirements.txt](requirements.txt)
+[requirements.txt](https://github.com/jacques-andre/crypto-yank/blob/master/requirements.txt)
 
 ```
 pyperclip==1.8.0
