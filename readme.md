@@ -1,6 +1,8 @@
 <h1 align='center'>crypto-yank 🏦📋</h1>
 <h3 align='center'>A python written crypto currency clipboard stealer.</h3>
 
+<img src='.github/demo.gif'></img>
+
 ### Features:
 
 * Written in Python 3
@@ -45,7 +47,6 @@ Once this file is created in the same directory as `crypto-yank.py` you can run 
 
 ### Demo:
 
-<img src='https://i.imgur.com/FeT7yAo.png' align='center'></img>
 ### [Video](https://vimeo.com/437961025)
 
 
