@@ -1,5 +1,5 @@
 <h1 align='center'>crypto-yank 🏦📋</h1>
-<h3 align='center'>A python written crypto currency clipboard stealer.</h3>
+<h3 align='center'>crypto currency clipboard stealer.</h3>
 
 <img src='.github/demo.gif'></img>
 
