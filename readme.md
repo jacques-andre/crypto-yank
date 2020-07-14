@@ -1,12 +1,12 @@
 <h1 align='center'>crypto-yank 🏦📋</h1>
 <h3 align='center'>A python written crypto currency clipboard stealer.</h3>
 
-<img src='.github/demo.gif'></img>
+<img src='.github/out.gif'></img>
 
 ### Features:
 
 * Written in Python 3
-* Support For: Bitcoin (Legacy & Segwit),Etherum,Litecoin and Monero.
+* Support For: `Bitcoin (Legacy & Segwit),Etherum,Litecoin,Dash and Monero.`
 * Easy setup script & simple install.
 
 ### About:
@@ -43,12 +43,9 @@ Example `addresses.json`:
 ```
 Once this file is created in the same directory as `crypto-yank.py` you can run `crypto-yank.py` to start monitoring.
 
-
-
 ### Demo:
 
 ### [Video](https://vimeo.com/437961025)
-
 
 ### Requirements:
 
@@ -60,3 +57,12 @@ pyperclip==1.8.0
 
 ### Todo:
 - Add more cryptos!
+
+### License
+[GPLv3](https://github.com/jacques-andre/crypto-yank/blob/master/LICENSE)
+<hr>
+
+**Warning**
+
+We are not responsible for any misuse or damage caused by this program. Use this tool at your own risk!
+
