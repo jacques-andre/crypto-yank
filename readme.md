@@ -1,7 +1,7 @@
 <h1 align='center'>crypto-yank 🏦📋</h1>
 <h3 align='center'>A python written crypto currency clipboard stealer.</h3>
 
-<img src='.github/out.gif'></img>
+<img src='.github/demo.gif'></img>
 
 ### Features:
 
@@ -30,15 +30,18 @@ python3 crypto-yank.py
 
 If you don't want to use the setup script you can provide your own `addresses.json` in the following format.
 
-Example `addresses.json`:
+Example [addresses.json](https://github.com/jacques-andre/crypto-yank/blob/master/addresses.json):
 
 ```json
 {
-    "legacy_btc": "your_legacy_address",
-    "segwit_btc": "your_segwit_address",
-    "xmr": "your_xmr_address",
-    "eth": "your_eth_address",
-    "lite": "your_litecoin_address"
+    "legacy_btc": "leg_ad",
+    "segwit_btc": "seg_ad",
+    "xmr": "xmr_ad",
+    "eth": "eth_ad",
+    "lite": "lite_ad",
+    "dash": "dash_ad",
+    "ripple": "ripple_ad",
+    "doge": "doge_ad"
 }
 ```
 Once this file is created in the same directory as `crypto-yank.py` you can run `crypto-yank.py` to start monitoring.
