@@ -6,7 +6,7 @@
 ### Features:
 
 * Written in Python 3
-* Support For: `Bitcoin (Legacy & Segwit),Etherum,Litecoin,Dash and Monero.`
+* Support For: `Bitcoin (Legacy & Segwit),Etherum,Litecoin,Dash,Doge,Ripple and Monero.`
 * Easy setup script & simple install.
 
 ### About:

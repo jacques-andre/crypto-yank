@@ -1,1 +1,10 @@
-{"legacy_btc": "leg_ad", "segwit_btc": "seg_ad", "xmr": "xmr_ad", "eth": "eth_ad", "lite": "lite_ad", "dash": "dash_ad", "ripple": "ripple_ad", "doge": "doge_ad"}
+{
+    "legacy_btc": "leg_ad",
+    "segwit_btc": "seg_ad",
+    "xmr": "xmr_ad",
+    "eth": "eth_ad",
+    "lite": "lite_ad",
+    "dash": "dash_ad",
+    "ripple": "ripple_ad",
+    "doge": "doge_ad"
+}
