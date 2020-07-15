@@ -80,6 +80,7 @@ pyperclip==1.8.0
 ### Upcoming/Todo:
 - Add more cryptos!
 - Logging to text file.
+- Better video demo.
 
 ### License
 [GPLv3](https://github.com/jacques-andre/crypto-yank/blob/master/LICENSE)
