@@ -7,7 +7,8 @@
 
 * Written in Python 3
 * Support For: `Bitcoin (Legacy & Segwit),Etherum,Litecoin,Dash,Doge,Ripple and Monero.`
-* Easy setup script & simple install.
+* Easy setup script.
+* Specific crypto replacement.
 
 ### About:
 
@@ -44,6 +45,24 @@ Example [addresses.json](https://github.com/jacques-andre/crypto-yank/blob/maste
     "doge": "doge_ad"
 }
 ```
+You can also provide the key `"NULL"` to specific cryptos if you wish not to monitor them:
+```
+{
+    "legacy_btc": "leg_ad",
+    "segwit_btc": "seg_ad",
+    "xmr": "NULL",
+    "eth": "eth_ad",
+    "lite": "lite_ad",
+    "dash": "dash_ad",
+    "ripple": "ripple_ad",
+    "doge": "doge_ad"
+}
+```
+Placing the string  `"NULL"` for xmr would now ignore that crypto currency.
+
+##### NOTE: 
+Bitcoin addresses are mandatory including (segwit and legacy).
+
 Once this file is created in the same directory as `crypto-yank.py` you can run `crypto-yank.py` to start monitoring.
 
 ### Demo:
@@ -58,8 +77,9 @@ Once this file is created in the same directory as `crypto-yank.py` you can run 
 pyperclip==1.8.0
 ```
 
-### Todo:
+### Upcoming/Todo:
 - Add more cryptos!
+- Logging to text file.
 
 ### License
 [GPLv3](https://github.com/jacques-andre/crypto-yank/blob/master/LICENSE)

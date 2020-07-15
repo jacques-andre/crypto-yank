@@ -30,11 +30,26 @@ if os.path.exists("addresses.json"):
     print("You already have created addresses.json!!")
     sys.exit()
 
-for k, v in addresses.items():
-    print(f"Please enter a address for: {k}")
-    addresses[k] = input("")
+print("Current Cryptos: ")
+for k in addresses.keys():
+    print('* ' + k)
+
+print()
+for k in addresses.keys():
+    print(f"Please enter a address for: {k} (type 0 to not monitor)")
+    user_input = str(input(""))
+    if k == "legacy_btc" and user_input == "0":
+        print("Btc addresses must be monitored!")
+        sys.exit()
+    if k == "segwit_btc" and user_input == "0":
+        print("Btc addresses must be monitored!")
+        sys.exit()
+    if user_input == "0":
+        addresses[k] = 'NULL'
+    else:
+        addresses[k] = user_input
 
 with open('addresses.json', 'w') as fp:
-    json.dump(addresses, fp)
+    json.dump(addresses, fp, indent=4)
 
 print(f"Done! generated addresses.json")

