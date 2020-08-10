@@ -8,7 +8,6 @@ addresses = {
     "segwit_btc": "",
     "xmr": "",
     "eth": "",
-    "lite": "",
     "dash": "",
     "ripple": "",
     "doge": "",
