@@ -11,15 +11,17 @@ addresses = {
     "lite": "",
     "dash": "",
     "ripple": "",
-    "doge": ""
+    "doge": "",
 }
 
-print(r""" ___ _ __ _   _ _ __ | |_ ___        _   _  __ _ _ __ | | __
+print(
+    r""" ___ _ __ _   _ _ __ | |_ ___        _   _  __ _ _ __ | | __
   / __| '__| | | | '_ \| __/ _ \ _____| | | |/ _` | '_ \| |/ /
  | (__| |  | |_| | |_) | || (_) |_____| |_| | (_| | | | |   <
   \___|_|   \__, | .__/ \__\___/       \__, |\__,_|_| |_|_|\_\
             |___/|_|                   |___/
-""")
+"""
+)
 
 
 print("created by: github.com/jacques-andre")
@@ -32,24 +34,24 @@ if os.path.exists("addresses.json"):
 
 print("Current Cryptos: ")
 for k in addresses.keys():
-    print('* ' + k)
+    print("* " + k)
 
 print()
 for k in addresses.keys():
     print(f"Please enter a address for: {k} (type 0 to not monitor)")
     user_input = str(input(""))
     if k == "legacy_btc" and user_input == "0":
-        print("Btc addresses must be monitored!")
+        print("BTC addresses must be monitored!")
         sys.exit()
     if k == "segwit_btc" and user_input == "0":
         print("Btc addresses must be monitored!")
         sys.exit()
     if user_input == "0":
-        addresses[k] = 'NULL'
+        addresses[k] = "NULL"
     else:
         addresses[k] = user_input
 
-with open('addresses.json', 'w') as fp:
+with open("addresses.json", "w") as fp:
     json.dump(addresses, fp, indent=4)
 
 print(f"Done! generated addresses.json")
