@@ -1,5 +1,6 @@
-<h3 align='center'>A crypto currency clipboard stealer.</h3>
 <img align='center' src='.github/logo.png'></img>
+<h3 align='center'>crypto-currency clipboard stealer.</h3>
+<hr>
 
 <img src='.github/demo.gif'></img>
 
@@ -10,6 +11,7 @@
 * Easy setup script.
 * Specific crypto replacement.
 * Comprised of regex to find and match addresses.
+* Logging to `log.txt`
 
 ### About:
 
@@ -65,7 +67,7 @@ Once this file is created in the same directory as `crypto-yank.py` you can run 
 
 ### Demo:
 
-### [Video](https://vimeo.com/437961025)
+### [Video](https://streamable.com/341s0a)
 
 ### Requirements:
 
