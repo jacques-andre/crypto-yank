@@ -1,9 +1,9 @@
 {
-  "legacy_btc": "an_evil_btc_address",
-  "segwit_btc": "seg_ad",
-  "xmr": "an_evil_xmr_address",
-  "eth": "an_evil_eth_address",
-  "dash": "dash_ad",
-  "ripple": "ripple_ad",
-  "doge": "doge_ad"
+    "btc": "btc_seg_ev",
+    "xmr": "ev_xmr",
+    "eth": "ev_eth",
+    "dash": "ev_dash",
+    "xrp": "ev_xrp",
+    "doge": "ev_doge",
+    "ada" : "ev_ada"
 }
