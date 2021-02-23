@@ -1,11 +1,12 @@
 {
-    "btc": "replace_me_btc",
-    "xmr": "replace_me_xmr",
-    "eth": "replace_me_eth",
-    "dash": "replace_me_dash",
-    "xrp": "replace_me_xrp",
-    "doge": "replace_me_doge",
-    "ada" : "replace_me_ada",
-    "lite" : "replace_me_lite",
-    "dot" : "replace_me_dot"
+  "btc": "replace_me_btc",
+  "xmr": "replace_me_xmr",
+  "eth": "replace_me_eth",
+  "dash": "replace_me_dash",
+  "xrp": "replace_me_xrp",
+  "doge": "replace_me_doge",
+  "ada": "replace_me_ada",
+  "lite": "replace_me_lite",
+  "dot": "replace_me_dot",
+  "tron": "replace_me_tron"
 }

