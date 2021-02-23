@@ -64,6 +64,7 @@ Now crypto-yank will only monitor Bitcoin & Ethereum addresses.
 - Polkadot (`$DOT`)
 - Doge (`$DOGE`)
 - Ripple (`$XRP`)
+- Tron (`$TRON`)
 
 
 More on the way....
