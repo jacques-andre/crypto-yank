@@ -70,18 +70,6 @@ Now crypto-yank will only monitor Bitcoin & Ethereum addresses.
 
 More on the way....
 
-### Donate:
-***Everything about crypto-yank is free, donate to fuel development.***
-
-*Make sure crypto-yank isn't running ;)*
-
-
-```
-ETH: 0x4BDDeddfbb17CAE7A89b305B494FFd70CCE5B29B
-BTC: bc1qq9y4gc3c435uqhrctsp67kvyv4enqgky5p2375
-```
-
-
 #### Warning:
 
 I am not responsible for any misuse or damage caused by this program. Use this tool at your own risk!
