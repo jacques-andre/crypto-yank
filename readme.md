@@ -9,7 +9,6 @@
 ## About/Usage:
 
 ### About:
-[Blog post](https://www.jacquesandre.me/posts/crypto-yank/)
 
 crypto-yank matches crypto-currency addresses found in the clipboard using regex. When no addresses are in the clipboard, crypto-yank will remain dormant and not interact with the users clipboard.
 
