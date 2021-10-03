@@ -1,48 +1,55 @@
-import pprint
 import time
 from termcolor import cprint
-import os
 import json
 import pyperclip
 
+# open testing files
 with open("words.txt") as words_file:
-    words = words_file.read().splitlines()
+    WORDS = words_file.read().splitlines()
 
 with open("addresses_test.json") as addresses_test:
-    addresses = json.load(addresses_test)
+    ADDRESSES = json.load(addresses_test)
+
+
+def word_test() -> list:
+    # copies a word to the clipboard and tests when pasting if it is the same word
+    failed = []
+    for word in WORDS:
+        print(f"Testing: {word}")
+        pyperclip.copy(word)
+        time.sleep(1)  # small delay, ensures crypto-yank reads in clipboard
+        pasted = pyperclip.paste()
+
+        if pasted == word:
+            cprint("Passed!", "green")
+        else:
+            cprint("Failed!", "red")
+            failed.append(word)
+            break
+    return failed
+
+
+def address_test() -> list:
+    failed = []
+    for k, v in ADDRESSES.items():
+        print(f"Testing: {k}")
+        pyperclip.copy(k)
+        time.sleep(1)  # small delay, ensures crypto-yank reads in clipboard
+        pasted = pyperclip.paste()
+
+        if pasted == v:
+            cprint("Passed!", "green")
+        else:
+            cprint("Failed!", "red")
+            failed.append(k)
+            break
+    return failed
 
 
 def main():
-    w_count = 0
-    a_count = 0
-    for word in words:
-        print(f"word: {word}")
-        pyperclip.copy(word)
-        time.sleep(2)
-        word_in = pyperclip.paste()
-
-        if word == word_in:
-            cprint("Passed!", "green")
-            w_count += 1
-        else:
-            cprint("Failed!", "red")
-            print(f"word: {word}, word_in: {word_in}")
-
-    for k, v in addresses.items():
-        print(f"address: {k}")
-        pyperclip.copy(k)
-        time.sleep(2)
-        paste = pyperclip.paste()
-
-        if paste == v:
-            cprint("Passed!", "green")
-            a_count += 1
-        else:
-            cprint("Failed!", "red")
-            print(f"ad: {k}, expected: {v}")
-
-    print(f"Word count: {w_count}, len: {len(words)}, %: {w_count / len(words)}")
-    print(f"ad count: {a_count}, len: {len(addresses)}, %: {a_count / len(addresses)}")
+    print(f"Running tests... Make sure crypto-yank.py is running!")
+    failed_words = word_test()
+    failed_ad = address_test()
 
 
 main()
