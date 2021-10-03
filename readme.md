@@ -61,7 +61,6 @@ Now crypto-yank will only monitor Bitcoin & Ethereum addresses.
 - Monero (`$XMR`)
 - Litecoin (`$LTC`)
 - Cardano (`$ADA`)
-- Polkadot (`$DOT`)
 - Doge (`$DOGE`)
 - Ripple (`$XRP`)
 - Tron (`$TRX`)

