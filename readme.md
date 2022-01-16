@@ -1,6 +1,7 @@
-<p align="center"><img src=".github/logo.png" width="280" align="middle"></img>
-</p>
-<h3 align="center">Replace crypto-currency addresses with your own.</h3>
+<img src=".github/logo.png" width="180"></img>
+
+## crypto-yank
+Replace crypto-currency addresses with your own.
 
 ## Demo:
 <img src=".github/demo.gif"></img>
