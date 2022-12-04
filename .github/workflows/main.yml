@@ -10,7 +10,6 @@ jobs:
 
       - name: Set up Go
         uses: actions/setup-go@v3
-        working-directory: ./cryptoyank
 
       - name: Build
         run: go build -v ./...
