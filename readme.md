@@ -7,9 +7,6 @@ crypto-yank matches and replaces crypto-currency addresses found in the clipboar
 ![Go Build](https://github.com/jacques-andre/crypto-yank/actions/workflows/main.yml/badge.svg)
 
 <br>
-<br>
-
-## Demo:
 
 <img src=".github/demo.gif"></img>
 
