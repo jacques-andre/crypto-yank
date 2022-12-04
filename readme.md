@@ -3,6 +3,9 @@
 ## crypto-yank
 Replace crypto-currency addresses with your own.
 
+![Go Build](https://github.com/jacques-andre/crypto-yank/actions/workflows/main.yml/badge.svg)
+
+
 <br>
 <br>
 
