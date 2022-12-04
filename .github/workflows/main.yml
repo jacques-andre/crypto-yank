@@ -1,0 +1,21 @@
+name: Go package
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        working-directory: ./cryptoyank
+
+      - name: Build
+        run: go build -v ./...
+        working-directory: ./cryptoyank
+
+      - name: Test
+        run: go test -v ./...
+        working-directory: ./cryptoyank
