@@ -2,7 +2,7 @@
 
 ## crypto-yank
 
-Replace crypto-currency addresses with your own.
+crypto-yank matches and replaces crypto-currency addresses found in the clipboard.
 
 ![Go Build](https://github.com/jacques-andre/crypto-yank/actions/workflows/main.yml/badge.svg)
 
@@ -12,10 +12,6 @@ Replace crypto-currency addresses with your own.
 ## Demo:
 
 <img src=".github/demo.gif"></img>
-
-### About:
-
-crypto-yank matches and replaces crypto-currency addresses found in the clipboard.
 
 ## Supported Coins:
 
