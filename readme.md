@@ -17,3 +17,7 @@ crypto-yank matches and replaces crypto-currency addresses found in the clipboar
 - Monero
 - Doge
 - Dash
+
+## updates (May 2023)
+
+- Embedding `addresses.json` into binary. 
