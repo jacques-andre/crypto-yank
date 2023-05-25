@@ -1,5 +1,5 @@
 build:
-	go build -o cryptoyank main.go
+	go build -o cryptoyank cmd/main.go
 
 run:
 	go run main.go

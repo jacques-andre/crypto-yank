@@ -13,8 +13,8 @@ jobs:
 
       - name: Build
         run: go build -v ./...
-        working-directory: ./cryptoyank
+        working-directory: ./
 
       - name: Test
         run: go test -v ./...
-        working-directory: ./cryptoyank
+        working-directory: ./
