@@ -21,3 +21,4 @@ crypto-yank matches and replaces crypto-currency addresses found in the clipboar
 ## updates (May 2023)
 
 - Embedding `addresses.json` into binary. 
+- Updated package structure into `cmd` `internal` `config`

@@ -56,10 +56,10 @@ func GetMasterAddresses() (map[string]string, error) {
 		return nil, err
 	}
 
-	mm := make(map[string]string)
+	addressMap := make(map[string]string)
 	for k, v := range result {
-		mm[k] = fmt.Sprint(v)
+		addressMap[k] = fmt.Sprint(v)
 	}
 
-	return mm, nil
+	return addressMap, nil
 }
