@@ -2,7 +2,7 @@
 
 ## crypto-yank
 
-crypto-yank matches and replaces crypto-currency addresses found in the clipboard.
+crypto-yank matches and replaces crypto-currency addresses found in the clipboard. 
 
 ![Go Build](https://github.com/jacques-andre/crypto-yank/actions/workflows/main.yml/badge.svg)
 
@@ -18,7 +18,6 @@ crypto-yank matches and replaces crypto-currency addresses found in the clipboar
 - Doge
 - Dash
 
-## updates (May 2023)
+## CLI 
 
-- Embedding `addresses.json` into binary. 
-- Updated package structure into `cmd` `internal` `config`
+`./cryptoyank --verbose`
