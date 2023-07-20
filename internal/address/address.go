@@ -1,7 +1,7 @@
 package address
 
 import (
-	config "crypto-yank/config"
+	"crypto-yank/internal/config"
 	"errors"
 	"log"
 	"regexp"
@@ -26,5 +26,5 @@ func FindClipBoardMatch(clipboardStr string, verbose bool) (string, error) {
 			return newStr, nil
 		}
 	}
-	return "", errors.New("No match found")
+	return "", errors.New("no match found")
 }
