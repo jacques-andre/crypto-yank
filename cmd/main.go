@@ -17,6 +17,9 @@ func main() {
 	if err != nil {
 		log.Fatalf("unable to init clipboard, %s", err.Error())
 	}
+	if *verboseFlag {
+		log.Printf("running in verbose mode...")
+	}
 	ch := clipboard.Watch(context.Background(), clipboard.FmtText)
 	for data := range ch {
 		clipboardData := string(data)
